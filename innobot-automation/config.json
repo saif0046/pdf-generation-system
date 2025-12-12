@@ -1,0 +1,11 @@
+{
+  "output_dir": "output_pdfs",
+  "count": 100,
+  "placeholders": {
+    "{{name}}": "name",
+    "{{date}}": "date",
+    "{{email}}": "email",
+    "{{id}}": "number:1000:9999",
+    "{{notes}}": "sentence"
+  }
+}
