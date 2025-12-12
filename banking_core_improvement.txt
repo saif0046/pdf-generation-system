@@ -1,0 +1,46 @@
+Improvement 1: Fix arithmetic operators
+
+Replaced incorrect operators (=+ and =-) with the correct in-place
+operators:
+
+    self._balance += amount
+    self._balance -= amount
+
+This ensures the balance is updated instead of overwritten.
+
+Improvement 2: Don’t access private attributes from subclasses
+
+Replaced double-underscore private attributes (__balance) with protected
+ones (_balance). This avoids name-mangling issues and allows child
+classes to work safely.
+
+Improvement 3: Add validation & return booleans
+
+Deposit and withdrawal methods now: - Validate amounts (no zero or
+negative values) - Return True/False to indicate success or failure This
+makes transfer logic reliable and realistic.
+
+Improvement 4: Separate responsibilities
+
+-   BankAccount handles generic account behavior.
+-   SavingsAccount adds interest-related functionality.
+-   CurrentAccount adds overdraft-specific behavior.
+
+This keeps the code clean and follows object‑oriented principles.
+
+Improvement 5: Improve transfer logic
+
+Transfer only succeeds if withdrawal succeeds. Prevents partial
+transfers and keeps accounts consistent.
+
+Improvement 6: Add meaningful comments
+
+Added short, clear comments explaining WHY decisions were made. This
+makes the code easier to understand for interviewers.
+
+Improvement 7: More realistic banking behavior
+
+-   Prevent negative deposits/withdrawals.
+-   Respect overdraft limits.
+-   Clean, formatted balance display.
+-   Consistent naming and structure.
